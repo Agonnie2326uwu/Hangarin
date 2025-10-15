@@ -6,25 +6,27 @@ Current Date and Time (UTC - YYYY-MM-DD HH:MM:SS formatted): 2025-10-14 04:03:58
 Current User's Login: hizoo5
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from hangarin import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("accounts/", include("allauth.urls")), 
     path('', views.home, name='home'),
     
-    # Task URLs
+    
     path('tasks/', views.TaskListView.as_view(), name='task-list'),
     path('tasks/add/', views.TaskCreateView.as_view(), name='task-add'),
     path('tasks/<int:pk>/update/', views.TaskUpdateView.as_view(), name='task-update'),
     path('tasks/<int:pk>/delete/', views.TaskDeleteView.as_view(), name='task-delete'),
     
-    # SubTask URLs
+    
     path('subtasks/', views.SubTaskListView.as_view(), name='subtask-list'),
     path('subtasks/add/', views.SubTaskCreateWithParentView.as_view(), name='subtask-add-with-parent'),
     path('tasks/<int:task_pk>/subtasks/add/', views.SubTaskCreateView.as_view(), name='subtask-add'),
     path('subtasks/<int:pk>/update/', views.SubTaskUpdateView.as_view(), name='subtask-update'),
     path('subtasks/<int:pk>/delete/', views.SubTaskDeleteView.as_view(), name='subtask-delete'),
+    
     
     path('categories/', views.CategoryListView.as_view(), name='category-list'),
     path('categories/add/', views.CategoryCreateView.as_view(), name='category-add'),
@@ -37,7 +39,7 @@ urlpatterns = [
     path('priorities/<int:pk>/update/', views.PriorityUpdateView.as_view(), name='priority-update'),
     path('priorities/<int:pk>/delete/', views.PriorityDeleteView.as_view(), name='priority-delete'),
     
-    
+   
     path('notes/', views.NoteListView.as_view(), name='note-list'),
     path('tasks/<int:task_pk>/notes/add/', views.NoteCreateView.as_view(), name='note-add'),
     path('notes/<int:pk>/update/', views.NoteUpdateView.as_view(), name='note-update'),

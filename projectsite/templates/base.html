@@ -79,15 +79,15 @@
 						<li class="nav-item dropdown">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<img src="{% static 'img/profile.jpg' %}" alt="user-img" width="36" class="img-circle">
-								<span>Agonnie2326uwu</span>
+								<span>{{ request.user.username }}</span>
 							</a>
 							<ul class="dropdown-menu dropdown-user">
 								<li>
 									<div class="user-box">
 										<div class="u-img"><img src="{% static 'img/profile.jpg' %}" alt="user"></div>
 										<div class="u-text">
-											<h4>Agonnie2326uwu</h4>
-											<p class="text-muted">Agonnie2326@gmail.com</p>
+											<h4>{{ request.user.username }}</h4>
+											<p class="text-muted">{{ request.user.email }}</p>
 											<a href="#" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
 										</div>
 									</div>
@@ -98,7 +98,7 @@
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
+								<a class="dropdown-item" href="{% url 'account_logout' %}"><i class="fa fa-power-off"></i> Logout</a>
 							</ul>
 						</li>
 					</ul>
@@ -116,13 +116,13 @@
 					<div class="info">
 						<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 							<span>
-								Agonnie2326uwu
-								<span class="user-level">Creator</span>
+								{{ request.user.username }}
+								<span class="user-level">Administrator</span>
 								<span class="caret"></span>
 							</span>
 						</a>
 						<div class="clearfix"></div>
-						<div class="collapse in" id="collapseExample" aria-expanded="true" >
+						<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
 							<ul class="nav">
 								<li><a href="#profile"><span class="link-collapse">My Profile</span></a></li>
 								<li><a href="#edit"><span class="link-collapse">Edit Profile</span></a></li>
@@ -175,14 +175,16 @@
 			</div>
 		</div>
 
+		<!-- Main Panel -->
 		<div class="main-panel">
 			<div class="content">
 				<div class="container-fluid">
-					
+					<!-- Page Header -->
 					<div class="page-header">
 						<h4 class="page-title">{% block page_title %}Dashboard{% endblock %}</h4>
 					</div>
 					
+					<!-- Django Messages -->
 					{% if messages %}
 					{% for message in messages %}
 					<div class="alert alert-{{ message.tags }} alert-modern alert-dismissible fade show" role="alert">
@@ -199,6 +201,21 @@
 					{% endblock %}
 				</div>
 			</div>
+			
+			<footer class="footer">
+				<div class="container-fluid">
+					<nav class="pull-left">
+						<ul class="nav">
+							<li class="nav-item"><a class="nav-link" href="#">Hangarin</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Licenses</a></li>
+						</ul>
+					</nav>
+					<div class="copyright ml-auto">
+						2025, made with <i class="la la-heart heart text-danger"></i> by <a href="#">{{ request.user.username }}</a>
+					</div>
+				</div>
+			</footer>
 		</div>
 	</div>
 </body>
