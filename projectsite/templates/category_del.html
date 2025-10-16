@@ -1,11 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block title %}Delete Category - Hangarin{% endblock %}
-
-{% block page_title %}Delete Category{% endblock %}
-
-{% block content %}
+{% block page_title %}Delete Category{% endblock %} {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card">
@@ -17,23 +13,18 @@
             <div class="card-body">
                 <div class="alert alert-warning">
                     <strong><i class="la la-warning"></i> Warning!</strong>
-                    Are you sure you want to delete this category?
                     {% if object.tasks.count > 0 %}
                     <br><br>
                     <strong class="text-danger">This category has {{ object.tasks.count }} task{{ object.tasks.count|pluralize }}!</strong> 
-                    Deleting it will also affect related tasks.
                     {% endif %}
                 </div>
-                
                 <div class="mb-4">
                     <h5><i class="la la-keyboard-o"></i> Category Name:</h5>
                     <p class="lead">{{ object.name }}</p>
-                    
                     {% if object.description %}
                     <h5><i class="la la-file-text-o"></i> Description:</h5>
                     <p>{{ object.description }}</p>
                     {% endif %}
-                    
                     <h5><i class="la la-info-circle"></i> Details:</h5>
                     <ul class="list-unstyled">
                         <li><i class="la la-tasks"></i> <strong>Tasks:</strong> {{ object.tasks.count }}</li>
@@ -41,7 +32,6 @@
                         <li><i class="la la-clock-o"></i> <strong>Updated:</strong> {{ object.updated_at|date:"F d, Y" }}</li>
                     </ul>
                 </div>
-                
                 <form method="post">
                     {% csrf_token %}
                     <div class="form-group text-right">

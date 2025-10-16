@@ -1,11 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block title %}SubTasks - Hangarin{% endblock %}
-
-{% block page_title %}SubTasks{% endblock %}
-
-{% block content %}
+{% block page_title %}SubTasks{% endblock %} {% block content %}
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -13,12 +9,11 @@
                 <div class="d-flex align-items-center justify-content-between">
                     <h4 class="card-title">All SubTasks</h4>
                     <a href="{% url 'subtask-add-with-parent' %}" class="btn btn-primary btn-round">
-                        <i class="la la-plus"></i> Add SubTask
+                        <i class="la la-plus"></i> ADD SUBTASK
                     </a>
                 </div>
             </div>
             <div class="card-body">
-                <!-- Search and Sort -->
                 <form method="get" class="mb-4">
                     <div class="row">
                         <div class="col-md-8">
@@ -91,8 +86,6 @@
                         </tbody>
                     </table>
                 </div>
-                
-                <!-- Pagination -->
                 {% if is_paginated %}
                 {% include 'includes/pagination.html' %}
                 {% endif %}

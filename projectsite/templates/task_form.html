@@ -1,10 +1,6 @@
-{% extends 'base.html' %}
-{% load widget_tweaks %}
+{% extends 'base.html' %} {% load widget_tweaks %}
 {% load static %}
-
-{% block title %}{{ page_title }} - Hangarin{% endblock %}
-{% block page_title %}{{ page_title }}{% endblock %}
-
+{% block title %}{{ page_title }} - Hangarin{% endblock %}{% block page_title %}{{ page_title }}{% endblock %}
 {% block content %}
 <div class="row justify-content-center">
 	<div class="col-md-10">
@@ -101,8 +97,6 @@
 							<small class="form-text text-danger">{{ form.category.errors.0 }}</small>
 						{% endif %}
 					</div>
-					
-					<!-- SUB TASKS Section (only show when editing existing task) -->
 					{% if object %}
 					<div class="card mt-4 mb-4" style="background-color: #f8f9fa;">
 						<div class="card-header" style="background-color: #17a2b8; color: white;">
@@ -144,12 +138,10 @@
 								</tbody>
 							</table>
 							<a href="{% url 'subtask-add' object.pk %}" class="btn btn-sm btn-info">
-								<i class="la la-plus"></i> Add another Sub task
+								<i class="la la-plus"></i> ADD ANOTHER SUBTASK
 							</a>
 						</div>
 					</div>
-					
-					<!-- NOTES Section (only show when editing existing task) -->
 					<div class="card mt-4 mb-4" style="background-color: #f8f9fa;">
 						<div class="card-header" style="background-color: #17a2b8; color: white;">
 							<h5 class="mb-0">NOTES</h5>

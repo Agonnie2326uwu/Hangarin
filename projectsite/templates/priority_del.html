@@ -1,28 +1,23 @@
 
 {% extends "base.html" %}
 {% load static %}
-
 {% block title %}Delete Priority - Hangarin{% endblock %}
-
 {% block page_title %}Delete Priority{% endblock %}
-
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card">
             <div class="card-header bg-danger text-white">
                 <h4 class="card-title mb-0">
-                    <i class="la la-exclamation-triangle"></i> Delete Priority
+                    <i class="la la-exclamation-triangle"></i> DELETE PRIORITY
                 </h4>
             </div>
             <div class="card-body">
                 <div class="alert alert-warning">
                     <strong><i class="la la-warning"></i> Warning!</strong>
-                    Are you sure you want to delete this priority?
                     {% if object.tasks.count > 0 %}
                     <br><br>
                     <strong class="text-danger">This priority has {{ object.tasks.count }} task{{ object.tasks.count|pluralize }}!</strong> 
-                    Deleting it will also affect related tasks.
                     {% endif %}
                 </div>
                 
@@ -42,7 +37,6 @@
                         <li><i class="la la-clock-o"></i> <strong>Updated:</strong> {{ object.updated_at|date:"F d, Y" }}</li>
                     </ul>
                 </div>
-                
                 <form method="post">
                     {% csrf_token %}
                     <div class="form-group text-right">

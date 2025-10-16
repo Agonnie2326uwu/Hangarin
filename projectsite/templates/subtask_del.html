@@ -1,10 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block title %}Hangarin - Delete SubTask{% endblock %}
-{% block page_title %}Delete SubTask{% endblock %}
-
-{% block content %}
+{% block page_title %}Delete SubTask{% endblock %} {% block content %}
 <div class="row">
 	<div class="col-md-8 offset-md-2">
 		<div class="card">
@@ -18,8 +15,6 @@
 				
 				<div class="alert alert-danger">
 					<h4 class="alert-heading"><i class="la la-warning"></i> Are you sure?</h4>
-					<p>Are you sure you want to delete the subtask: <strong>"{{ object.title }}"</strong>?</p>
-					<p class="mb-0">This action cannot be undone.</p>
 				</div>
 				
 				<form method="POST">

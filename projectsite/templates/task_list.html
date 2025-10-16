@@ -1,9 +1,5 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}Tasks - Hangarin{% endblock %}
-{% block page_title %}All Tasks{% endblock %}
-
+{% extends 'base.html' %} {% load static %}
+{% block title %}Tasks - Hangarin{% endblock %} {% block page_title %}All Tasks{% endblock %}
 {% block content %}
 <div class="row">
     <div class="col-md-12">
@@ -17,7 +13,6 @@
                 </div>
             </div>
             <div class="card-body">
-                <!-- Search Form -->
                 <form method="get" class="mb-4">
                     <div class="row">
                         <div class="col-md-8">
@@ -102,8 +97,6 @@
                         </tbody>
                     </table>
                 </div>
-                
-                <!-- Pagination -->
                 {% if is_paginated %}
                 {% include 'includes/pagination.html' %}
                 {% endif %}
