@@ -11,6 +11,7 @@ from hangarin import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('pwa.urls')),
     path("accounts/", include("allauth.urls")), 
     path('', views.home, name='home'),
     
