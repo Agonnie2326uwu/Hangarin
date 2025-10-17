@@ -1,0 +1,165 @@
+body {
+  background-color: #022c3a;
+  color: #e2e8f0;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+.sidebar {
+  background-color: #000000 !important;
+  color: #f8fafc;
+}
+.sidebar .nav > li > a {
+  color: #cbd5e1 !important;
+  transition: 0.3s;
+}
+.sidebar .nav > li > a:hover,
+.sidebar .nav > li.active > a {
+  background-color: #164e63 !important;
+  color: #67e8f9 !important;
+}
+
+.navbar {
+  background-color: #083344 !important;
+  border-bottom: 2px solid #22d3ee;
+}
+.navbar .input-group input {
+  background-color: #164e63 !important;
+  color: #f8fafc !important;
+  border-radius: 8px;
+  border: 1px solid #155e75;
+}
+.navbar .input-group input::placeholder {
+  color: #94a3b8;
+}
+.navbar .input-group .input-group-text {
+  background-color: #22d3ee !important;
+  border: none;
+  border-radius: 0 8px 8px 0;
+}
+.navbar .input-group .input-group-text i {
+  color: #ffffff !important;
+}
+
+.logo-header {
+  background-color: #0e7490 !important;
+  color: #67e8f9 !important; /* cyan color for "TASK MANAGEMENT DASHBOARD" */
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.main-panel {
+  background-color: #0e7490 !important;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.card-stats .card {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #ffffff;
+}
+.card-stats .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.4);
+}
+
+.card-stats .icon-big {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.bg-orange,
+.total-tasks {
+  background-color: #22d3ee !important;
+}
+.bg-orange .icon-big {
+  background-color: #06b6d4 !important;
+}
+
+.bg-green,
+.pending {
+  background-color: #2dd4bf !important;
+}
+.bg-green .icon-big {
+  background-color: #0d9488 !important;
+}
+
+.bg-red,
+.in-progress {
+  background-color: #0891b2 !important;
+}
+.bg-red .icon-big {
+  background-color: #155e75 !important;
+}
+
+.bg-blue,
+.completed {
+  background-color: #06b6d4 !important;
+}
+.bg-blue .icon-big {
+  background-color: #0e7490 !important;
+}
+
+.table {
+  background-color: #164e63;
+  color: #e2e8f0;
+  border-radius: 8px;
+}
+.table thead {
+  background-color: #083344;
+  color: #22d3ee;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.table thead th {
+  color: #22d3ee !important;
+  font-weight: 600;
+}
+.table tbody td {
+  color: #f1f5f9;
+}
+.table tbody tr:hover {
+  background-color: #155e75;
+}
+
+.table td:nth-child(1),
+.table th:nth-child(1) { color: #5eead4; }
+.table td:nth-child(2),
+.table th:nth-child(2) { color: #99f6e4; }
+.table td:nth-child(3),
+.table th:nth-child(3) { color: #67e8f9; }
+.table td:nth-child(4),
+.table th:nth-child(4) { color: #a5f3fc; }
+.table td:nth-child(5),
+.table th:nth-child(5) { color: #bae6fd; }
+.table td:nth-child(6),
+.table th:nth-child(6) { color: #e0f2fe; }
+
+.btn-primary {
+  background-color: #06b6d4;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  background-color: #0891b2;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #022c3a; }
+::-webkit-scrollbar-thumb { background: #22d3ee; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+
+footer, .footer, .footer-text, .copyright, .credits {
+  background-color: #000000 !important;
+  color: #ffffff !important; 
+}

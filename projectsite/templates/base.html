@@ -11,11 +11,31 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
 	<link rel="stylesheet" href="{% static 'css/ready.css' %}">
 	<link rel="stylesheet" href="{% static 'css/demo.css' %}">
-	
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-	
+	<link rel="stylesheet" href="{% static 'newcssstyle/style.css' %}">
 	{% block extra_css %}{% endblock %}
 </head>
+
+<style>
+	@font-face {
+		font-family: 'Algerian';
+		src: url("{% static 'fonts/Algerian.ttf' %}") format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	body, .logo-header .logo, .navbar, .sidebar, h1, h2, h3, h4, h5, h6, p, a, button, input {
+		font-family: 'Algerian', serif !important;
+		letter-spacing: 0.5px;
+	}
+
+	.logo-header .logo, .page-title {
+		font-family: 'Algerian', serif !important;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+</style>
+
 <body>
 	<div class="wrapper">
 		<div class="main-header">
@@ -28,6 +48,7 @@
 				</button>
 				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
 			</div>
+
 			<nav class="navbar navbar-header navbar-expand-lg">
 				<div class="container-fluid">
 					<form class="navbar-left navbar-form nav-search mr-md-3" action="">
@@ -40,6 +61,7 @@
 							</div>
 						</div>
 					</form>
+
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 						<li class="nav-item dropdown hidden-caret">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -49,6 +71,7 @@
 								<a class="dropdown-item" href="#">No new messages</a>
 							</div>
 						</li>
+
 						<li class="nav-item dropdown hidden-caret">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="la la-bell"></i>
@@ -74,15 +97,16 @@
 								</li>
 							</ul>
 						</li>
+
 						<li class="nav-item dropdown">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
-								<img src="{% static 'img/profile.jpg' %}" alt="user-img" width="36" class="img-circle">
+								<img src="{% static 'img/pweypwey.jpg' %}" alt="user-img" width="36" class="img-circle">
 								<span>{{ request.user.username }}</span>
 							</a>
 							<ul class="dropdown-menu dropdown-user">
 								<li>
 									<div class="user-box">
-										<div class="u-img"><img src="{% static 'img/profile.jpg' %}" alt="user"></div>
+										<div class="u-img"><img src="{% static 'img/pweypwey.jpg' %}" alt="user"></div>
 										<div class="u-text">
 											<h4>{{ request.user.username }}</h4>
 											<p class="text-muted">{{ request.user.email }}</p>
@@ -103,11 +127,12 @@
 				</div>
 			</nav>
 		</div>
+
 		<div class="sidebar">
 			<div class="scrollbar-inner sidebar-wrapper">
 				<div class="user">
 					<div class="photo">
-						<img src="{% static 'img/profile.jpg' %}">
+						<img src="{% static 'img/pweypwey.jpg' %}">
 					</div>
 					<div class="info">
 						<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -118,7 +143,7 @@
 							</span>
 						</a>
 						<div class="clearfix"></div>
-						<div class="collapse in" id="collapseExample" aria-expanded="true" >
+						<div class="collapse in" id="collapseExample" aria-expanded="true">
 							<ul class="nav">
 								<li><a href="#profile"><span class="link-collapse">My Profile</span></a></li>
 								<li><a href="#edit"><span class="link-collapse">Edit Profile</span></a></li>
@@ -127,6 +152,7 @@
 						</div>
 					</div>
 				</div>
+
 				<ul class="nav">
 					<li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
 						<a href="{% url 'home' %}">
@@ -168,30 +194,31 @@
 				</ul>
 			</div>
 		</div>
+
 		<div class="main-panel">
 			<div class="content">
 				<div class="container-fluid">
 					<div class="page-header">
 						<h4 class="page-title">{% block page_title %}Dashboard{% endblock %}</h4>
 					</div>
-					
+
 					{% if messages %}
-					{% for message in messages %}
-					<div class="alert alert-{{ message.tags }} alert-modern alert-dismissible fade show" role="alert">
-						<i class="la la-check-circle"></i>
-						{{ message }}
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					{% endfor %}
+						{% for message in messages %}
+							<div class="alert alert-{{ message.tags }} alert-modern alert-dismissible fade show" role="alert">
+								<i class="la la-check-circle"></i>
+								{{ message }}
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+						{% endfor %}
 					{% endif %}
-					
+
 					{% block content %}
 					{% endblock %}
 				</div>
 			</div>
-			
+
 			<footer class="footer">
 				<div class="container-fluid">
 					<nav class="pull-left">
@@ -209,6 +236,7 @@
 		</div>
 	</div>
 </body>
+
 <script src="{% static 'js/core/jquery.3.2.1.min.js' %}"></script>
 <script src="{% static 'js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js' %}"></script>
 <script src="{% static 'js/core/popper.min.js' %}"></script>
@@ -222,6 +250,5 @@
 <script src="{% static 'js/plugin/chart-circle/circles.min.js' %}"></script>
 <script src="{% static 'js/plugin/jquery-scrollbar/jquery.scrollbar.min.js' %}"></script>
 <script src="{% static 'js/ready.min.js' %}"></script>
-<script src="{% static 'js/hangarin.js' %}"></script>
 {% block extra_js %}{% endblock %}
 </html>

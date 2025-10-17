@@ -15,27 +15,27 @@
  */
 /*   Background   */
 .bg-default {
-  background: #607D8B !important;
+  background: #351a1e !important;
 }
 
 .bg-primary {
-  background: #1D62F0 !important;
+  background: #24314d !important;
 }
 
 .bg-info {
-  background: #23CCEF !important;
+  background: #024552 !important;
 }
 
 .bg-success {
-  background: #59d05d !important;
+  background: #034405 !important;
 }
 
 .bg-warning {
-  background: #fbad4c !important;
+  background: #462904 !important;
 }
 
 .bg-danger {
-  background: #ff646d !important;
+  background: #410508 !important;
 }
 
 *:focus {
@@ -2039,10 +2039,10 @@ body {
 .main-header {
   min-height: 55px;
   width: 100%;
-  background: #ffffff;
+  background: #210606;
   position: fixed;
   z-index: 1001;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #8c0909;
 }
 .main-header .logo-header {
   float: left;
@@ -5565,7 +5565,7 @@ body {
 
 /* table bordered states */
 .table-bordered-bd-default td, .table-bordered-bd-default th {
-  border: 1px solid #607D8B !important;
+  border: 1px solid #021a26 !important;
 }
 
 .table-bordered-bd-primary td, .table-bordered-bd-primary th {
@@ -5577,15 +5577,15 @@ body {
 }
 
 .table-bordered-bd-success td, .table-bordered-bd-success th {
-  border: 1px solid #59d05d !important;
+  border: 1px solid #0a440c !important;
 }
 
 .table-bordered-bd-warning td, .table-bordered-bd-warning th {
-  border: 1px solid #fbad4c !important;
+  border: 1px solid #4d3416 !important;
 }
 
 .table-bordered-bd-danger td, .table-bordered-bd-danger th {
-  border: 1px solid #ff646d !important;
+  border: 1px solid #4f0d11 !important;
 }
 
 .table-striped td, .table-striped th {
@@ -5741,8 +5741,8 @@ body {
 
 /*     Nav Search     */
 .nav-search .input-group {
-  border: 1px solid #eee;
-  background: #eee;
+  border: 1px solid #2a1212;
+  background: #bb2424;
   border-radius: 50px;
 }
 .nav-search .input-group:hover, .nav-search .input-group:focus {

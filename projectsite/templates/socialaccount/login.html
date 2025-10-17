@@ -14,14 +14,14 @@ display: flex;
 align-items: center;
 justify-content: center;
 height: 100vh;
-background-color: #f8f9fc;
+background-color: #3b3280;
 
 }
 .auth-card {
 max-width: 500px;
-background: #fff;
+background: #353757;
 border-radius: 12px;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+box-shadow: 0 4px 12px rgba(7, 4, 4, 0.1);
 padding: 2rem;
 text-align: center;
 }
@@ -30,7 +30,7 @@ text-align: center;
 <body>
 <div class="auth-card">
 <h3 class="mb-4">Confirm Sign In</h3>
-<p class="mb-3">You are about to sign in using your <strong>{{ provider.name }}</strong> account.</p>
+<p class="mb-3">You are signing in <strong>{{ provider.name }}</strong> account.</p>
 <form method="post">
 {% csrf_token %}
 <button type="submit" class="btn btn-primary btn-block mb-3">Continue with {{ provider.name }}</button>

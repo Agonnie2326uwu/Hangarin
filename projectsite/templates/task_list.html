@@ -19,8 +19,7 @@
                             <div class="input-group">
                                 <input type="text" 
                                        name="q" 
-                                       class="form-control" 
-                                       placeholder="Search tasks by title, description, category, or priority..." 
+                                       class="form-control"  
                                        value="{{ request.GET.q }}">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit">
@@ -36,12 +35,10 @@
                         </div>
                         <div class="col-md-4">
                             <select name="order_by" class="form-control" onchange="this.form.submit()">
-                                <option value="-created_at" {% if order_by == '-created_at' %}selected{% endif %}>Newest First</option>
-                                <option value="created_at" {% if order_by == 'created_at' %}selected{% endif %}>Oldest First</option>
-                                <option value="title" {% if order_by == 'title' %}selected{% endif %}>Title (A-Z)</option>
-                                <option value="-title" {% if order_by == '-title' %}selected{% endif %}>Title (Z-A)</option>
-                                <option value="deadline" {% if order_by == 'deadline' %}selected{% endif %}>Deadline (Earliest)</option>
-                                <option value="-deadline" {% if order_by == '-deadline' %}selected{% endif %}>Deadline (Latest)</option>
+                                <option value="-created_at" {% if order_by == '-created_at' %}selected{% endif %}>Latest</option>
+                                <option value="created_at" {% if order_by == 'created_at' %}selected{% endif %}>Oldest</option>
+                                <option value="title" {% if order_by == 'title' %}selected{% endif %}>Title</option>
+                                <option value="deadline" {% if order_by == 'deadline' %}selected{% endif %}>Deadline</option>
                                 <option value="status" {% if order_by == 'status' %}selected{% endif %}>Status</option>
                                 <option value="priority__name" {% if order_by == 'priority__name' %}selected{% endif %}>Priority</option>
                             </select>

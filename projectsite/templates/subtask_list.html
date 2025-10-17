@@ -37,10 +37,9 @@
                         </div>
                         <div class="col-md-4">
                             <select name="order_by" class="form-control" onchange="this.form.submit()">
-                                <option value="-created_at" {% if order_by == '-created_at' %}selected{% endif %}>Newest First</option>
-                                <option value="created_at" {% if order_by == 'created_at' %}selected{% endif %}>Oldest First</option>
-                                <option value="title" {% if order_by == 'title' %}selected{% endif %}>Title (A-Z)</option>
-                                <option value="-title" {% if order_by == '-title' %}selected{% endif %}>Title (Z-A)</option>
+                                <option value="-created_at" {% if order_by == '-created_at' %}selected{% endif %}>Latest</option>
+                                <option value="created_at" {% if order_by == 'created_at' %}selected{% endif %}>Oldest</option>
+                                <option value="title" {% if order_by == 'title' %}selected{% endif %}>Title</option>
                                 <option value="status" {% if order_by == 'status' %}selected{% endif %}>Status</option>
                             </select>
                         </div>
